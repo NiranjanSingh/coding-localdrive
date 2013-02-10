@@ -1,0 +1,26 @@
+???? WHY BINARY SEARCH IS BETTER THAN LINEAR SEARCH
+
+...... Binary search is better than Linear search as in binary search whole array is divided into two parts then it is checked whether our key will be on the first half or the second half of the aray, which means that every time our array which has to be searched becomes half of the original one thus our original size of the array keeps on decreasing by 2 every time and it compares the key element with only  mid value of the array hence it finds that our key element which has to be searched is present or not. As for example .. if the original size of array is 10 then next time it will be 5 then next time 2 or 3 and next time we will find whether the key is present or not thus giving a complexity of O(logn) where n is size of the array.
+Binary search requires array in sorted order and  searches for key element on random access.
+
+
+...... Linear search searches the complete array sequentially and if it is found then it returns else if the end of array is reached and not found then it prints that key element is not found. It does the seqential searching and if 10 elements are present than it will compare key element with each of the 10 elements. Thus giving a complexity of O(n) where n is the size of the array.
+Linear search requres array in any order that is it's not necessary that array should be sorted or something like that.
+
+...... OBSERVATION 
+           Number_of_elements        Input_Elements        Input_Key       Linear_Search_Comparisons      Binay_Search_Comparisons
+                10                 1,2,3,4,5,6,7,8,9,10       10                    10                               6   
+
+   
+???? WHICH SORING ALGORITHM IS EFFICIENT MERGE SORT, INSERTION SORT OR BUBBLE SORT
+
+......   Merge sort is more efficient as in merge sort the array is divided into two parts say left and right then the subarrays left part and right part is sorted using the same algorithm and at last it is merged. At first the array is partitioned, and then sub-array and it continues until  there are < 2 elements in the sub-array.Then the two parts that is left part and right part is merged , but  the left part and right part is always sorted hence it compares very less numbeer of times so it works recursively thus giving a complexity of O(nlogn).
+
+
+Bubble Sort takes the input and sorts it by comparing each element with other elements thus,  it is an O(n^2) algorithm with a large constant. In simple words, time required to perform bubble sort on ‘n’ numbers increases as square of ‘n’. Thus it is quite slow.
+
+Insertion Sort inserts the element by only comaparing with the previous elements and find the correct position of the new element. Thus it is an O(n^2) algorithm, but with a small constant.It works best when the array is already almost sorted.
+
+..... OBSERVATION
+           Number_of_elements        Input_Elements        Bubble_sort_comparisons  Insertion_sort_comparisons    Merge_sorth_Comparisons
+                10                 10,9,8,7,6,5,4,3,2,1             45                    45                               10     

@@ -1,0 +1,53 @@
+//Implement insert,delete and search functions in a hash table that takes elements as
+//strings. The hash function is created using the division method. Resolve collisions 
+//using --> chaining --> open addressing linear,quadratic and double hashing. Display 
+//the probing sequence for each key
+
+#include<stdio.h>
+#include<stdlib.h>
+
+const int c= 128;
+
+struct node {
+  char *data;
+  struct node *next;
+};
+
+//for calculating the length of a string
+size_t length(char *str) {
+  size_t l=0;
+  for(l=0;str[l]!='\0';l++);
+  return l-1;
+}
+
+//for calculating a power to the b
+size_t power(size_t a,size_t b) {
+  if (b==0) return 1;
+  else
+    return a * power(a,b-1);
+}
+
+//for calculating the indexing of s
+size_t indexing(char *str) {
+  size_t i=0,a,index;
+  for (i=0;str[i]!='\0';i++) {
+    a=(int)str[i]; // for computing the ascii value of a character
+    index+=a*power(c,i);
+  }
+  return index;
+}
+
+
+int main() {
+  size_t size,i,j,len,index;
+  char string[50];
+  printf("Enter the table size : ");
+  scanf("%zd",size);
+  struct node arr[size];
+  for (i=0;i<size;i++) { 
+    len = 0;
+    printf("\nEnter the string : ");
+    fgets(string,50,stdin);
+    len = length(string);
+    index = indexing(string);
+    arr = chaining(arr,size,len,index

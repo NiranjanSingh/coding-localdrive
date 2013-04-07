@@ -4,7 +4,10 @@
 main()
 {
 int n,i=0;
+int *x;
+x=&i;
+printf("%p %p %d",x,&x,*x);
 //randomize();
-scanf("%d",&n);
-while(i++<10) printf("%d ",rand() % n);
+//scanf("%d",&n);
+//while(i++<10) printf("%d ",rand() % n);
 }

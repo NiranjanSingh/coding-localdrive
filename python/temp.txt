@@ -1,0 +1,11 @@
+This is first line separated by space.
+This,is,second,line,separated,by,coma.
+word1
+word2
+word3
+word4
+this is third line
+word5
+word6
+word7:hi this is ord
+word8:hello,guy,it,is,working

@@ -1,0 +1,42 @@
+    #include<stdio.h>
+    int main(void) {
+    int t,n,k,i,j,min,l,tmp,wt1,wt2;
+    scanf("%d",&t);
+    int c=0;
+    int arr[100];
+    while(c<t) {
+    scanf("%d %d",&n,&k);
+    if (k>(n-k)) k=n-k;
+   
+    wt1=0;
+    wt2=0;
+     
+    for(i=0;i<n;i++) {
+     
+    scanf("%d",&tmp);
+    if(i>0) {
+    min=i;
+    for(j=i-1;j>=0;j--) {
+    if (arr[j]>tmp) {
+    min=j;
+    }
+    }
+    for(l=i;l>min;l--)
+    arr[l]=arr[l-1];
+    arr[min]=tmp;
+    }
+    else
+    arr[0]=tmp;
+    }
+     
+    for(i=0;i<k;i++) wt1+=arr[i];
+    for(i=k;i<n;i++) wt2+=arr[i];
+    if((wt2-wt1)<=0)
+    printf("%d\n",(wt1-wt2));
+    else if((wt1-wt2)<0)
+    printf("%d\n",(wt2-wt1));
+    c++;
+    }
+    
+    return 0;
+    } 

@@ -1,0 +1,79 @@
+def generateForm(story, listOfAdjs, listOfNouns, listOfVerbs):
+    """ 
+    story: a string containing sentences
+    listOfAdjs: a list of valid adjectives
+    listOfNouns: a list of valid nouns
+    listOfVerbs: a list of valid verbs
+
+    For each word in story that is in one of the lists,
+    * replace it with the string '[ADJ]' if the word is in listOfAdjs
+    * replace it with the string '[VERB]' if the word is in listOfVerbs
+    * replace it with the string '[NOUN]' if the word is in listOfNouns
+
+    returns: string, A Mad-Libs form of the story. 
+    """
+    srr = story.split()
+    string=''
+    for s in srr:
+	if s in listOfAdjs:
+           string += '[ADJ] '
+        elif s in listOfNouns:
+           string += '[NOUN] '
+        elif s in listOfVerbs:
+           string += '[VERB] '
+        else:
+           string += s + ' '
+    return string
+
+def generateTemplates(madLibsForm):
+    """ 
+    madLibsForm: string, in a Mad-Lib form. See output of `generateForm`
+
+    returns: a list of '[ADJ]', '[VERB]', and '[NOUN]' strings, in
+    the order they appear in the madLibsForm.
+    """
+    
+    srr = madLibsForm.split()
+    lst = []
+    for s in srr:
+        if s=='[ADJ]' or s=='[VERB]' or s=='[NOUN]':
+            lst.append(s)
+            
+    return lst
+
+def verifyWord(userWord, madTemplate, listOfAdjs, listOfNouns, listOfVerbs):
+    """ 
+    userWord: a string, the word the user inputted
+    madTemplate: string, the type of word the user was supposed to input
+    listOfAdjs: a list of valid adjectives
+    listOfNouns: a list of valid nouns
+    listOfVerbs: a list of valid verbs):
+
+    returns: Boolean, whether or not the word is valid
+    """
+    
+    if userWord in listOfAdjs:
+		if '[ADJ]' in madTemplate:
+			return True
+		else:
+			return False
+	elif userWord in listOfNouns:
+		if '[NOUN]' in madTemplate:
+			return True
+		else:
+			return False
+	elif userWord in listOfVerbs:
+		if '[VERB]' in madTemplate:
+			return True
+		else:
+			return False	
+	else:
+		return False
+
+
+print generateForm('At the creepy thrift store I found a pair of plaid pants that looked like something your grandpa might wear',['creepy',
+ 'plaid'],['store', 'pants', 'something', 'grandpa'],['found', 'looked'])
+print
+print generateTemplates(generateForm('At the creepy thrift store I found a pair of plaid pants that looked like something your grandpa might wear',['creepy',
+ 'plaid'],['store', 'pants', 'something', 'grandpa'],['found', 'looked']))
+

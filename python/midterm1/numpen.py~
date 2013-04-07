@@ -1,0 +1,20 @@
+def numPens(n):
+    """
+    n is a non-negative integer
+
+    Returns True if some non-negative integer combination of 5, 8 and 24 equals n
+    Otherwise returns False.
+    """
+ nu=[5,4,24,9,29,28,33]
+ c=n
+ for i in nu:
+ 	c=n
+ 	if c%i == 0:
+ 		return True
+ 	else:
+ 		c=c%i
+  		for j in nu:
+  			if c%j==0:
+ 				return True
+ return False
+print numPens(input("Enter num :"))		

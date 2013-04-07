@@ -1,0 +1,8 @@
+import math
+t=input()
+while(t>0):
+  n=input()
+  print str(2*n-2) +" " +str(2+n*n-n)
+  #print result
+  t-=1
+  

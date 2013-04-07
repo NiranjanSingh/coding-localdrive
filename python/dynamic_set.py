@@ -1,0 +1,2 @@
+class set:
+	def insert

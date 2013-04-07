@@ -2,8 +2,8 @@
 #include<stdlib.h>
 
 struct Graph {
-    int V;
-	int E;
+    int E;
+	int V;
 	int **Adj; //two dimensional Adjacnecy matrix
 };
 
@@ -52,9 +52,9 @@ struct Graph *adjMatrixOfGraph() {
 	printf("\nTest3");
 		    
     for (i=0;i<G->E;i++) {
-        printf("\nEnter edges (u,v) and cost : ");
+        printf("\nEnter edges (u,v) and cost/weight : ");
 	    scanf("%d %d %d",&u,&v,&c);
-	    G->Adj[u][v] = G->Adj[v][u] = c ; //for undirected graph assign to both (u,v) and (v,u)
+	    G->Adj[u][v] = c ; //for directed graph assign to both (u,v) and (v,u)
 	}
 	
 	return G;
@@ -96,6 +96,33 @@ void BFS(struct Graph *G,int u) {
         }
     }
 }
+
+// Bellman-Ford Algorithm to find shortest path
+void bFord(struct Graph *G,int s) {
+    int v,d[G->V]; //d is for distance
+    int que[100],rear=-1,i;//queue is created as an array
+    for (i=0;i<G->V;i++) d[i]=0; //for initialising distance to each vertex as 0
+    que[++rear]=s;
+    while(rear!=-1) { 
+        s=que[0];  // for deleting 
+        rear--;    // element from queue
+        if (rear!=-1)
+        for (i=0;i<=rear;i++) que[i]=que[i+1];
+        
+        for(v=0;v<G->V;v++) { //for each adjacent vertex v of s
+            if (G->Adj[s][v]!=0 && (d[v] > d[s] + G->Adj[s][v] || d[v]==0)) { //if v is adjacent and its previous distance is less then update it
+                if (d[v]==0) que[++rear] = v;
+                d[v]=d[s] + G->Adj[s][v];
+            }
+        }
+    }
+    printf("\nDistance from %d to : ",s);
+    for (i=0;i<G->V;i++) 
+        printf("\n%d --> %d",i,d[i]);
+
+}       
+        
+         
     
 
 
@@ -106,7 +133,7 @@ void main() {
     G = adjMatrixOfGraph(); //creating a new Graph 
     visited = (int *) malloc(G->V * sizeof(int));
     int i,c,u;
-    printf("0:DFS 1:BFS ");
+    printf("0:DFS 1:BFS 2:Bellman-Ford");
     scanf("%d",&c);
     switch(c) {
     case 0:
@@ -122,6 +149,11 @@ void main() {
         printf("\nEnter the vertex to start with : ");
         scanf("%d",&u);
         BFS(G,u);
+        break;
+    case 2:
+        printf("\nEnter the vertex to start with : ");
+        scanf("%d",&u);
+        bFord(G,u);
         break;
     }
 }

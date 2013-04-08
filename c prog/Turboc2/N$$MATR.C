@@ -1,0 +1,38 @@
+#include<conio.h>
+#include<stdio.h>
+main()
+{
+int r=2,c=2,i,j,k,a[2][2],b[2][2],m[2][2];
+clrscr();
+for (i=0;i<r;i++)
+{
+	for (j=0;j<c;j++)
+	{
+	scanf(" %d",&a[i][j]);
+	}
+printf("\n");
+}
+printf("en");
+for (i=0;i<r;i++)
+{
+	for (j=0;j<c;j++)
+	{
+	scanf(" %d",&b[i][j]);
+	}
+printf("\n");
+}
+for (i=0;i<r;i++)
+{
+	for (j=0;j<r;j++)
+	{
+	m[i][j]=0;
+		for (k=0;k<c;k++)
+		m[i][j] =  m[i][j] + a[i][k] * b[k][j];
+	printf("%d    ",m[i][j]);
+	}
+printf("\n");
+}
+
+getch();
+}
+

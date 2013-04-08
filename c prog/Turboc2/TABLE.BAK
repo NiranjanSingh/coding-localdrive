@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <conio.h>
+main()
+{
+int i,j;
+clrscr();
+ while(i<=10)
+{  i++;
+   for(j=2;j<=15;j++)
+   textcolor(RED);
+   cprintf("%4d",i*j);
+   cprintf("\n");
+   }
+   getch();
+   }

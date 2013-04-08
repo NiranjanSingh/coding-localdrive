@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+main()
+{
+int gd=DETECT,gm;
+int i,j;
+int y;
+initgraph(&gd,&gm,"");
+for(i=0;i<=10;i++)
+{
+settextstyle(0,0,1);
+outtextxy(100,10,"Nianjan");
+y=30;
+for(j=1;j<=4;j++)
+{
+settextstyle(i,HORIZ_DIR,j);
+outtextxy(10,y,"Pallavi");
+y += (textheight("Pallavi")+10);
+}
+settextstyle(i,VERT_DIR,0);
+setusercharsize(2,1,3,2);
+outtextxy(10,y,"Rozi");
+getch();
+cleardevice();
+}
+closegraph();
+restorecrtmode();
+}

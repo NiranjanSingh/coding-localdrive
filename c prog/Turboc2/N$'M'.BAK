@@ -1,0 +1,40 @@
+#include<conio.h>
+main()
+{
+int n,i,m,s,j;
+clscr();
+printf("Enter any number: ");
+scanf("%d",&n);
+s=n;
+for (i=1;i<=n;i++)
+{
+if (n%2 ==0)
+m=n/2;
+else
+m=(n/2) +1;
+if ( i<=m)
+{
+	for (j=1;j<=n;j++)
+	{
+	if (j==i || j==1 || j==n || j==s)
+	printf("* ");
+	else
+	printf("  ");
+	}
+}
+else
+{
+	for (j=1;j<=n;j++)
+	{
+	if (j==1 || j==n)
+	printf("* ");
+	else
+	printf("  ");
+	}
+}
+printf("\n");
+s=s-1;
+}
+getch();
+}
+

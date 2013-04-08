@@ -1,0 +1,22 @@
+#include<conio.h>
+#include<stdio.h>
+main()
+{
+long int n,n1;
+int d=0,i=1,r;
+clrscr();
+printf("Enter any number in binary form: ");
+scanf("%ld",&n);
+n1=n;
+while (n>0)
+{
+	r=n%10;
+	d=(r*i) +d;
+	n=n/10;
+	i=i*2;
+}
+printf(" The decimal form of %ld is : %d ",n1,d);
+printf("\n\n\n...........................Made by niranjan ....................");
+getch();
+}
+

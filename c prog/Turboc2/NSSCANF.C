@@ -1,0 +1,19 @@
+/*program to use sprintf and sscanf*/
+
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+int i=10,i1;
+char ch='A',ch1;
+float a=3.14,a1;
+char str[20];
+clrscr();
+printf("\n%d %c %f",i,ch,a);
+sprintf(str,"%d %c %f",i,ch,a);
+printf("\n%s",str);
+sscanf(str,"%d %c %f",&i1,&ch1,&a1);
+printf("\n%d %c %.3f %d %.3f",i1,ch1,a1,i1+2,a1+2);
+getch();
+}
+

@@ -1,0 +1,30 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: N$'V' - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\pc1\LOCALS~1\Temp\RSP4.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/N$'V'.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\Turboc2\N$'V'.C"
+]
+Creating command line "cl.exe @C:\DOCUME~1\pc1\LOCALS~1\Temp\RSP4.tmp" 
+<h3>Output Window</h3>
+Compiling...
+N$'V'.C
+f:\turboc2\n$'v'.c(6) : warning C4013: 'clrscr' undefined; assuming extern returning int
+f:\turboc2\n$'v'.c(9) : error C2059: syntax error : 'bad suffix on number'
+f:\turboc2\n$'v'.c(9) : error C2146: syntax error : missing ';' before identifier 'n'
+f:\turboc2\n$'v'.c(9) : warning C4552: '-' : operator has no effect; expected operator with side-effect
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+N$'V'.OBJ - 2 error(s), 2 warning(s)
+</pre>
+</body>
+</html>

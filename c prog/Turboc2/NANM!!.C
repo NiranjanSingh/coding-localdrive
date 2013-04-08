@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<dos.h>
+#include<graphics.h>
+#include<conio.h>
+#include<math.h>
+main()
+{
+int gd=DETECT,gm,size,x=310,y=190;
+float i=0.0;
+void far *p;
+initgraph(&gd,&gm,"");
+circle(320,200,10);
+floodfill(320,200,WHITE);
+size=imagesize(310,190,330,210);
+p=(void *)malloc(size);
+getimage(310,190,330,210,p);
+while (!kbhit())
+{
+putimage(x,y,p,1);
+x=320+200*cos((i*22/7)/180);
+y=240+200*sin((i*22/7)/180);
+delay(9);
+i=i+0.1;
+if ((i*22/7)/180>48/7)
+i=0.0;
+putimage(x,y,p,1);
+}
+closegraph();
+getch();
+}

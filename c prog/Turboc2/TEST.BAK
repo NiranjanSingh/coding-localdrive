@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+void fucn(class1);
+main()
+{
+typedef struct{
+		char name[25];
+		int rollno;
+	    }class1;
+clrscr();
+printf("Enter your name");
+scanf("%[^\n]",class1.name);
+printf("Enter your roll number");
+scanf("%d",&class1.rollno);
+fucn(class1);
+getch();
+}
+void fucn(class1)
+{
+printf("\n\n goodmorning %[^\n]",class1.name);
+printf("\n\n you roll number is %d",class1.rollno);
+return();
+}
+
+

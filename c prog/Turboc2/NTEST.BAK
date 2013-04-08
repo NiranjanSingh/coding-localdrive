@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<dos.h>
+#include<graphics.h>
+main()
+{
+int gd=DETECT,gm;
+int x,y,x1,y1,x2,y2,dx,dy;
+long int size;
+void far *point;
+initgraph(&gd,&gm,"");
+randomize();
+x1=getmaxx()-50;
+y1=getmaxy()-50;
+x=x1/2.0;
+y=y1/2.0;
+dx=0;
+dy=0;
+while (dx==0)
+dx=5-random(5);
+while (dy==0)
+dy=5-random(5);
+rectangle(50,50,x1,y1);
+rectangle(60,60,x1-10,y1-10);
+floodfill(55,55,WHITE);
+circle(x,y,10);
+floodfill(x,y,15);
+size=imagesize(x-8,y-8,x+8,y+8);
+point =(void *)malloc(size);
+getimage(x-10,y-10,x+10,y+10,point);
+while(!kbhit())
+{
+	putimage(x-10,y-10,point,0);
+	x2=x+dx;
+	y2=y+dy;
+	if ((x2<73)||((x2+27)>x1))
+	dx=-dx;
+	if ((y2<73)||((y2+27)>y1))
+	dy=-dy;
+	delay(9999);
+	putimage(x-10,y-10,point,1);
+	x=x2;
+	y=y2;
+}
+getch();
+closegraph();
+}

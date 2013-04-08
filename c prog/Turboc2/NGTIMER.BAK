@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+void main()
+{
+int gd=DETECT,gm,"c:\turboc2\egavga.bgi";
+x=getmaxx();
+y=getmaxy();
+while (!kbhit())
+{
+clrscr();
+setclor(RED);
+setextstyle(8,HORIZ_dir,2);
+outextstyle(250,5,"DAWRA");
+gettime(&t);
+printf("\n\n\n\n\n The current time is "%2d : %2d : %2d \n",tl.ti_hour,t.ti_min,t.ti_hund);
+delay(100);
+}
+getch();
+}

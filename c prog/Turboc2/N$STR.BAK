@@ -1,0 +1,13 @@
+#include<conio.h>
+main()
+{
+int i;
+char s[80];
+printf("Enter any text");
+scanf("%s",&s);
+for (i=0;(s[i]=getchar())!='\n';i++)
+{
+}
+printf(" there are %d no. of characters",i+1);
+getchar();
+}

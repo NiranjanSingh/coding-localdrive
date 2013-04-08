@@ -1,0 +1,30 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+main()
+{
+int **p;
+int i,j,r,c;
+while(getch() != 'q')
+{
+clrscr();
+printf("Enter the number of rows : ");
+scanf("%d",&r);
+printf("Enter the number of cols : ");
+scanf("%d",&c);
+p=(int **) malloc(r*sizeof(int));
+*p=(int *) malloc(c*sizeof(int));
+p[r][c]={1,2,3,4};
+/*for(i=0;i<r;i++)
+	for(j=0;j<c;j++)
+	p[i][j]=i+j;*/
+for(i=0;i<r;i++)
+{
+	for(j=0;j<c;j++)
+	printf("%d ",p[i][j]);
+printf("\n");
+}
+}
+}
+

@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<dos.h>
+#include<conio.h>
+main()
+{
+clrscr();
+window(34,12,34,12);
+clreol();
+printf("Niranjan");
+getch();
+}

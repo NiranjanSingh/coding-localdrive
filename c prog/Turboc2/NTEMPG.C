@@ -1,0 +1,31 @@
+#include
+<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+int m[4][4];
+void PrintM(int,int);
+main()
+{
+int i,j,c;
+c=1;
+for(i=0;i<4;i++)
+	for(j=0;j<4;j++)
+	m[i][j]=c++;
+i=3;
+j=3;
+PrintM(i,j);
+getch();
+}
+void PrintM(int i,int j)
+{
+	int a,b;
+	clrscr();
+	line(0,0,100,100);
+	for(a=0;a<4;a++)
+	{
+	for(b=0;b<4;b++)
+	printf("%d\t",m[a][b]);
+	line(0,0,100,100);
+	printf("\n");
+	}
+}

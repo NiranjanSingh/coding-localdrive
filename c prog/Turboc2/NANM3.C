@@ -1,0 +1,52 @@
+/*This program moves the character or any thing typed by printing and*/
+/*moving and erasing previous typed!!!!!!!!*/
+#include<stdio.h>
+#include<conio.h>
+#include<dos.h>
+#include<stdlib.h>
+#include<graphics.h>
+#include<math.h>
+void main()
+{
+int gd=DETECT,gm,error;
+int x1,y1,r,c,s,col=1;
+float d=0.0;
+	initgraph(&gd,&gm,"");
+	error=graphresult();
+if (error != grOk)
+{
+	printf("Graphics error: %s\n",grapherrormsg(error));
+	getch();
+	exit(1);
+}
+	printf("Enter the center(x,y) and radius of the circle : ");
+	scanf("%d %d ",&x1,&y1);
+	scanf("%d",&r);
+c=r;
+cleardevice();
+randomize();
+while (!kbhit())
+{
+	line(x1,y1,x1+r*cos(d),y1+r*sin(d));
+	putpixel(x1+r*cos(d),y1-r*sin(d),random(getmaxcolor()));
+/*	putpixel(random(getmaxx()),random(getmaxy()),random(getmaxcolor()));*/
+	printf("\n");
+	circle(x1+r*cos(d),y1+r*sin(d),r/2);
+	d=d+0.01;
+	delay(999);
+	setcolor(col);
+	if (r==c) s=1;
+	if (s==1) r=r-1;
+	if (r==0) { s=0; setcolor(col++); }
+	if (s==0) r=r+1;
+	if (col==15) col =1;
+
+}
+getch();
+printf("Made by niranjan");
+getch();
+closegraph();
+}
+
+
+

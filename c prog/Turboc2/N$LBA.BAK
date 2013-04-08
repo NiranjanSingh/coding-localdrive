@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+int i,j;
+char n;
+clrscr();
+printf("enter any charter");
+scanf("%c",&n);
+for ( i=n;i>=65;i--)
+{
+	for (j=i-(n-65);j<=n-65;j--)
+	{
+	printf("  ");
+	}
+	for (j=i;j>=65;j--)
+	{
+	printf("%c ",j);
+	}
+printf("\n");
+}
+getch();
+}

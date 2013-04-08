@@ -1,0 +1,19 @@
+#include<stdio.h>
+main()
+{
+FILE *fp;
+char f[12],s[100];
+printf("Enter the file name which you want to view");
+scanf("%s",f);
+fp=fopen(f,"r");
+	if (fp==NULL)
+	{
+	printf("Cannot open file ");
+	sleep(2);
+	exit();
+	}
+while (fgets(s,99,fp)!=NULL)
+printf("%s",s);
+fclose(fp);
+getch();
+}

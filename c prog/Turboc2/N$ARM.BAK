@@ -1,0 +1,24 @@
+#include<conio.h>
+main()
+{
+int n,i,n1,q=0,r=0,s=0;
+clrscr();
+printf("Enter any number :");
+scanf("%d",&n);
+for (i=1;i<=n;i++)
+{
+n1 = i;
+	while ( n1 != 0 )
+	{
+	q =(int)n1/10;
+	r = n1 % 10;
+	s = s + r * r * r;
+	n1 = q;
+	}
+if ( s == i)
+printf(" %d is a armstrong number \n",i);
+else
+printf(" %d is not a armstrong number \n",i);
+}
+getch();
+}

@@ -1,0 +1,13 @@
+#include<CONIO.H>
+main()
+{
+int I=0,J=0;
+CLRSCR();
+for (I=0;I<=5;I++)
+{
+J=I+J;
+}
+printf("the sum is %d",J);
+getch();
+}
+

@@ -1,0 +1,16 @@
+#include<conio.h>
+int sum(int a,int b)
+{
+	int z;
+	z=a+b;
+	return(z);
+}
+main()
+{
+	int a,b;
+	scanf("%d",&a);
+	scanf("%d",&b);
+	printf("sum = %d",sum(a,b));
+getch();
+}
+

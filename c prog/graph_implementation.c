@@ -4,14 +4,15 @@
 struct Graph {
     int E;
 	int V;
-	int **Adj; //two dimensional Adjacnecy matrix
+	int Adj[50][50]; //two dimensional Adjacnecy matrix
 };
 
 struct Graph *G = NULL; 
 
 struct Graph *adjMatrixOfGraph() {
 	int i,u,v,c;
-	struct Graph *G = (struct Graph *) malloc(sizeof(struct Graph));
+	struct Graph *G ;
+	G = (struct Graph *) malloc(sizeof(struct Graph));
 	if(!G) {
 		printf("Memory Error");
 		return;
@@ -23,11 +24,12 @@ struct Graph *adjMatrixOfGraph() {
 	
 	printf("Enter number of vertices and Number of Edges :");
 	scanf("%d %d",&G->V,&G->E);
-	
+    
+       	
 	printf("This line is also not printing");
 	
 	//for creating a double dimensional array via pointer
-	G->Adj = (int **) malloc(G->V * sizeof(int));
+/*	G->Adj = (int **) malloc(G->V * sizeof(int));
 	//memory allocation testing
 	if(!G->Adj) {
 		printf("Memory Error");
@@ -41,7 +43,7 @@ struct Graph *adjMatrixOfGraph() {
 		printf("Memory Error");
 		return;
         }
-    }   
+    }*/   
 	    
 	printf("Test1");    
 	for (u=0;u<G->V;u++)
@@ -111,7 +113,12 @@ void bFord(struct Graph *G,int s) {
         
         for(v=0;v<G->V;v++) { //for each adjacent vertex v of s
             if (G->Adj[s][v]!=0 && (d[v] > d[s] + G->Adj[s][v] || d[v]==0)) { //if v is adjacent and its previous distance is less then update it
-                if (d[v]==0) que[++rear] = v;
+            //if v is not present in queue then push v in queue
+                 for (i=0;i<=rear;i++) //check whether present or not
+                    if (que[i] == v) break;
+                 if (i==rear+1) // if not present then 
+                    que[++rear] = v; //insert v in que
+                    
                 d[v]=d[s] + G->Adj[s][v];
             }
         }

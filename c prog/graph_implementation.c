@@ -140,7 +140,7 @@ void main() {
     G = adjMatrixOfGraph(); //creating a new Graph 
     visited = (int *) malloc(G->V * sizeof(int));
     int i,c,u;
-    printf("0:DFS 1:BFS 2:Bellman-Ford");
+    printf("0:DFS 1:BFS 2:Bellman-Ford 3:Prim's " );
     scanf("%d",&c);
     switch(c) {
     case 0:
@@ -161,6 +161,11 @@ void main() {
         printf("\nEnter the vertex to start with : ");
         scanf("%d",&u);
         bFord(G,u);
+        break;
+    case 3:
+        printf("\nEnter the vertex to start with : ");
+        scanf("%d",&u);
+        prims(G,u);
         break;
     }
 }
